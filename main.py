@@ -175,6 +175,7 @@ while run:
   win.blit(frukt2, [200, sharik2])
   win.blit(frukt3, [600, sharik3])
 
+
   g += 1
   # вывод текста на экран
   font = pygame.font.Font(pygame.font.get_default_font(), 36)
