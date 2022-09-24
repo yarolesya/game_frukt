@@ -51,11 +51,14 @@ v = 150
 # q1 = random.randint(100, 1000)
 # q2 = random.randint(100, 1000)
 # q3 = random.randint(100, 1000)
+a = list(range(40, 120, 21))
 
-speedorange = random.randint(5, 10) / 10
-speedlemon = random.randint(5, 10) / 10
-speedarbuz = random.randint(5, 10) / 10
-speedbomba = random.randint(5, 10) / 10
+random_numbers = random.sample(a, 4)
+
+speedorange = random_numbers[0]/100
+speedlemon = random_numbers[1]/100
+speedarbuz = random_numbers[2]/100
+speedbomba = random_numbers[3]/100
 
 p = 50
 n = 50
