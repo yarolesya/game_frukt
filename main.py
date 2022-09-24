@@ -1,18 +1,17 @@
 import pygame
 import random
 
-random_numbers = random.sample(range(1500), 4)
-print(random_numbers)
+a = list(range(100, 1001, 100))
+
+random_numbers = random.sample(a, 4)
+
+
 q = random_numbers[0]
-q1 = random_numbers[0]
-q2 = random_numbers[0]
-q3 = random_numbers[0]
+q1 = random_numbers[1]
+q2 = random_numbers[2]
+q3 = random_numbers[3]
 
-# рандомное число
 
-for i in range(20):
-  num = random.randint(0, 10)
-  print(num)
 
 
 pygame.init()
@@ -57,10 +56,15 @@ u = 200
 v = 150
 
 
-speedorange = random.randint(3, 10)/10
-speedlemon = random.randint(3, 10)/10
-speedarbuz = random.randint(3, 10)/10
-speedbomba = random.randint(3, 10)/10
+#q = random.randint(100, 1000)
+#q1 = random.randint(100, 1000)
+#q2 = random.randint(100, 1000)
+#q3 = random.randint(100, 1000)
+
+speedorange = random.randint(5, 10)/10
+speedlemon = random.randint(5, 10)/10
+speedarbuz = random.randint(5, 10)/10
+speedbomba = random.randint(5, 10)/10
 
 
 p = 50
@@ -98,7 +102,7 @@ while run:
 
 
   sharik+=speedorange
-  if sharik > ty-18 and 500 <= z+165 and 500 >= z-25 and sharik < 800:
+  if sharik > ty-18 and q <= z+165 and q >= z-25 and sharik < 800:
     x = 0
     y = 0
   frukt = pygame.transform.scale(frukt, (x, y))
@@ -108,7 +112,7 @@ while run:
 
 
   sharik1 += speedlemon
-  if sharik1 > ty - 18 and 800 <= z + 168 and 800 >= z - 35 and sharik1 < 800:
+  if sharik1 > ty - 18 and q1 <= z + 168 and q1 >= z - 35 and sharik1 < 800:
     n = 0
     p = 0
   frukt1 = pygame.transform.scale(frukt1, (p, n))
@@ -118,7 +122,7 @@ while run:
 
 
   sharik2 += speedarbuz
-  if sharik2 > ty - 18 and 200 <= z + 168 and 200 >= z - 35 and sharik2 < 800:
+  if sharik2 > ty - 18 and q2 <= z + 168 and q2 >= z - 35 and sharik2 < 800:
     c = 0
     f = 0
   frukt2 = pygame.transform.scale(frukt2, (f, c))
@@ -128,7 +132,7 @@ while run:
 
 
   sharik3 += speedbomba
-  if sharik3 > ty - 18 and 600 <= z + 168 and 600 >= z - 35 and sharik3 < 800:
+  if sharik3 > ty - 18 and q3 <= z + 168 and q3 >= z - 35 and sharik3 < 800:
     t = 0
     d = 0
     win1 = 0
@@ -136,7 +140,16 @@ while run:
     win3 = 0
     v = 0
     z = 0
+    f = 0
+    c = 0
+    p = 0
+    n = 0
+    x = 0
+    y = 0
   frukt3 = pygame.transform.scale(frukt3, (d, t))
+  frukt2 = pygame.transform.scale(frukt2, (f, c))
+  frukt1 = pygame.transform.scale(frukt1, (p, n))
+  frukt = pygame.transform.scale(frukt , (x, y))
   b = pygame.transform.scale(b, (u, v))
 
 
@@ -177,13 +190,12 @@ while run:
 
   win.fill([win1,win2,win3])
   win.blit(b, [z, ty])
-  win.blit(frukt, [500, sharik])
-  win.blit(frukt1, [800, sharik1])
-  win.blit(frukt2, [200, sharik2])
-  win.blit(frukt3, [600, sharik3])
+  win.blit(frukt, [q, sharik])
+  win.blit(frukt1, [q1, sharik1])
+  win.blit(frukt2, [q2, sharik2])
+  win.blit(frukt3, [q3, sharik3])
 
 
-  g += 1
   # вывод текста на экран
   font = pygame.font.Font(pygame.font.get_default_font(), 36)
   text_surface = font.render('Score: {}'.format(g), True, (255, 0, 0))
