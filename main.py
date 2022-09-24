@@ -118,6 +118,7 @@ while run:
         n = 0
         x = 0
         y = 0
+        score = 0
     frukt3 = pygame.transform.scale(frukt3, (d, t))
     frukt2 = pygame.transform.scale(frukt2, (f, c))
     frukt1 = pygame.transform.scale(frukt1, (p, n))
