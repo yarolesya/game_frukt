@@ -1,6 +1,13 @@
 import pygame
 import random
 
+random_numbers = random.sample(range(1500), 4)
+print(random_numbers)
+q = random_numbers[0]
+q1 = random_numbers[0]
+q2 = random_numbers[0]
+q3 = random_numbers[0]
+
 # рандомное число
 
 for i in range(20):
