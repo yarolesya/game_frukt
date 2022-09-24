@@ -1,4 +1,13 @@
 import pygame
+import random
+
+# рандомное число
+
+for i in range(20):
+  num = random.randint(0, 10)
+  print(num)
+
+
 pygame.init()
 win = pygame.display.set_mode((1550, 800))
 pygame.display.set_caption('')
@@ -41,10 +50,10 @@ u = 200
 v = 150
 
 
-speedorange = 0.6
-speedlemon = 0.8
-speedarbuz = 0.9
-speedbomba = 0.4
+speedorange = random.randint(3, 10)/10
+speedlemon = random.randint(3, 10)/10
+speedarbuz = random.randint(3, 10)/10
+speedbomba = random.randint(3, 10)/10
 
 
 p = 50
@@ -57,15 +66,18 @@ t = 50
 d = 60
 
 run = True
+
+g = 0
+
 while run:
   for i in pygame.event.get():
     keys = pygame.key.get_pressed()
     if i. type == pygame.QUIT:
       run = False
   if keys[pygame.K_LEFT]:
-    z -= 2
+    z -= 4
   if keys[pygame.K_RIGHT]:
-    z += 2
+    z += 4
 
 
 
@@ -162,5 +174,13 @@ while run:
   win.blit(frukt1, [800, sharik1])
   win.blit(frukt2, [200, sharik2])
   win.blit(frukt3, [600, sharik3])
+
+  g += 1
+  # вывод текста на экран
+  font = pygame.font.Font(pygame.font.get_default_font(), 36)
+  text_surface = font.render('Score: {}'.format(g), True, (255, 0, 0))
+  win.blit(text_surface, dest=(0, 0))
+
+
   pygame.display.update()
 pygame.quit()
