@@ -73,6 +73,8 @@ run = True
 
 score = 0
 
+
+
 while run:
     for i in pygame.event.get():
         keys = pygame.key.get_pressed()
@@ -166,7 +168,7 @@ while run:
 
     # ввод текста на экран
     font = pygame.font.Font(pygame.font.get_default_font(), 36)
-    text_surface = font.render('Score: {}'.format(score), True, (255, 0, 0))
+    text_surface = font.render('Score: {}'.format(score), True, (255, 255, 0))
     win.blit(text_surface, dest=(0, 0))
 
     pygame.display.update()
