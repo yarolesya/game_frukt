@@ -55,10 +55,10 @@ a = list(range(40, 120, 21))
 
 random_numbers = random.sample(a, 4)
 
-speedorange = random_numbers[0]/100
-speedlemon = random_numbers[1]/100
-speedarbuz = random_numbers[2]/100
-speedbomba = random_numbers[3]/100
+speedorange = random_numbers[0] / 100
+speedlemon = random_numbers[1] / 100
+speedarbuz = random_numbers[2] / 100
+speedbomba = random_numbers[3] / 100
 
 p = 50
 n = 50
@@ -169,7 +169,7 @@ while run:
     # ввод текста на экран
     font = pygame.font.Font(pygame.font.get_default_font(), 36)
     text_surface = font.render('Score: {}'.format(score), True, (255, 255, 0))
-    win.blit(text_surface, dest=(0, 0))
+    win.blit(text_surface, dest=(30, 30))
 
     pygame.display.update()
 pygame.quit()
